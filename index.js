@@ -43,6 +43,23 @@ function findPath(matrix) {
 }
 //------------------------------
 
+
+function Round_and_Round(n, a, b) {
+    var positive = b > 0;
+    var aB = Math.abs(a+b);
+    if (aB<=n&&positive){
+        return aB;
+    } else if (aB<=n&&b===0){
+        return a;
+    } else if (aB<=n){
+        return n-aB;
+    } else {
+        return (b%n)+a
+    }
+}
+
+//----------------------------
+
 function hoop(n, m, turns) {
     var truArr = [];
     var fUps = [];
