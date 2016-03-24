@@ -82,3 +82,53 @@ function hoop(n, m, turns) {
     return fUps;
 }
 //--------------------------
+
+
+function Sudoku(s) {
+    var check = [1,2,3,4,5,6,7,8,9]; 
+    var _col = [],
+        gridRow,
+        gridCol,
+        gridIndex,
+        _grid = [];
+    
+    for (var i = 0; i < s.length; i++){
+        
+        _col.push([]);
+        _grid.push([]);
+    }
+    console.log(_grid);
+    for (var i = 0; i < s.length; i++){
+        check.forEach(function(e){
+            if (s[i].indexOf(e) === -1){return false;}
+        });
+        
+        s[i].forEach(function(e,x){
+            _col[x].push(e);
+            
+           gridRow = Math.floor( i / 3 );
+            
+           gridCol = Math.floor( x / 3 );
+
+
+           gridIndex = gridRow * 3 + gridCol;
+
+           _grid[gridIndex].push(e); 
+        });
+        
+    }
+
+    _col.forEach(function(e){
+            check.forEach(function(el){
+                if (e.indexOf(el) === -1){return false;}
+            })
+    });
+    
+    _grid.forEach(function(e){
+            check.forEach(function(el){
+                if (e.indexOf(el) === -1){return false;}
+            })
+    });
+    return true;
+}
+---------------------------------------------------
