@@ -132,3 +132,26 @@ function Sudoku(s) {
     return true;
 }
 ---------------------------------------------------
+
+m = 1
+ReduceDirections = d => {
+    while (m) {
+        for (i = 0; i < d.length-1; i++){
+            a=d[i][0]
+            b=d[i+1][0]
+            if (a == 'N' && b == 'S' || 
+                a == 'S' && b == 'N' ||
+                a == 'E' && b == 'W' ||
+                a == 'W' && b == 'E') {
+                d.splice(i, 2)
+                i=-1
+            } else {
+                m = 0
+            }
+        }
+    }
+    
+    return d
+}
+
+-------------------------------------------
