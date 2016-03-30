@@ -155,3 +155,26 @@ ReduceDirections = d => {
 }
 
 -------------------------------------------
+
+
+function fileNaming(names) {
+    var obj = {},
+        arr = [];
+    for (var i = 0; i < names.length; i++){
+        if (obj[names[i]] === undefined){
+            obj[names[i]] = 0
+            arr.push(names[i])
+        } else {
+            obj[names[i]]++
+            var newKey = names[i] + '(' + obj[names[i]] + ')'
+            if (obj[newKey] === undefined){
+                arr.push(newKey)
+                obj[newKey] = 0
+            } else {
+                i--
+            }
+        }
+    }
+    return arr;
+}
+-----------------------------
