@@ -178,3 +178,17 @@ function fileNaming(names) {
     return arr;
 }
 -----------------------------
+function helptoclone(A) {
+    var ans = 0;
+    for (var i = 0; i < A.length; i++){
+        for (var j = i + 1; j < A.length; j++){
+            if (A[i] * A[j] % 2 == 0){
+                ans++
+            }
+        }
+    }
+    return ans
+}
+
+
+--------------------------------------------
