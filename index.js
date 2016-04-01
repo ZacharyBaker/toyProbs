@@ -192,3 +192,18 @@ function helptoclone(A) {
 
 
 --------------------------------------------
+
+
+
+
+
+nextNumber = N => {
+    o = N.toString(2).split('').reduce((p,c) => { return p + c*1},0)
+    var b;
+    while (b !== o){
+        N++
+        b = N.toString(2).split('').reduce((p,c) => { return p + c*1},0)
+    }
+    return N
+}
+-------------------------
