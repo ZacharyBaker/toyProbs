@@ -207,3 +207,20 @@ nextNumber = N => {
     return N
 }
 -------------------------
+
+function stepOnCrack2(first, n) {
+    var a = [1,0,0,1,0,1,1,0]
+    var b = [0,1,1,0,1,0,0,1]
+    var guy;
+    if (first == 'left'){guy = b} else { guy = a }
+    while (guy.length < n){
+        guy.forEach(function(e) { if (e == 1) {
+                                guy.push(0)
+                                } else {
+                                    guy.push(1) }
+                                })
+    }
+    return guy[n-1] == 1 ? 'right' : 'left'              
+}
+
+---------------------------------------
