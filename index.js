@@ -224,3 +224,21 @@ function stepOnCrack2(first, n) {
 }
 
 ---------------------------------------
+
+
+function superEven2(n) {
+    var counter = 0;
+    var superEvens = []
+    while (superEvens.length < n){
+        var dude = String(counter).split('');
+        var yes = dude.every(e => e%2 == 0)
+        if (yes){
+             superEvens.push(counter);
+        }
+                counter+=2;
+            
+    }
+    return superEvens[superEvens.length-1];
+}
+
+-------------------------------------
