@@ -242,3 +242,27 @@ function superEven2(n) {
 }
 
 -------------------------------------
+
+function hoop(n, m, turns) {
+    var truArr = [];
+    var fUps = [];
+    for (var i = 1; i < m; i++){
+        if (i%3 === 0 || i%7 === 0){
+            truArr.push(0);
+        } else {
+            truArr.push(i);
+        }
+    }
+    for (var j = 0; j < turns.length; i++){
+        if (truArr[j] !== turns[j]){
+            if ((j+1)%n === 0){
+                fUps.push(n)
+            } else {
+                fUps.push((j+1)%n)
+            }
+        }
+    }
+    return fUps;
+}
+
+---------------------------------
