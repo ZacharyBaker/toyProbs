@@ -266,3 +266,25 @@ function hoop(n, m, turns) {
 }
 
 ---------------------------------
+
+
+function supereven(k) {
+    var counter = 0;
+    var guess = 2,
+        suprEven,
+        spl;
+    while (counter < k){
+        spl = guess.toString().split('');
+        suprEven = spl.every(function(e){
+            return e%2===0;
+        })
+        if (suprEven){
+            counter++;
+        }
+        if (suprEven&&counter===k){
+          return guess;
+          }
+        guess+=2;
+    }
+    
+}
