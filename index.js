@@ -288,3 +288,27 @@ function supereven(k) {
     }
     
 }
+
+
+============================
+
+function supereven(k) {
+    var counter = 0;
+    var guess = 1;
+    while (counter < k){
+        var spl = guess.toString().split('');
+        var suprEven = spl.every(function(e){
+            return e%2===0;
+        })
+        if (suprEven){
+            counter++;
+        }
+        if (suprEven&&counter===k){
+          return guess;
+          }
+        guess++;
+    }
+    
+}
+
+-----------------------------
