@@ -329,3 +329,27 @@ function Cipher_Zeroes(N) {
     if (v == 0) return 0
 }
 --------------------
+
+
+
+function Cipher_Zeroes(N) {
+    var v = 0;
+    N.split('').forEach(function(e){
+        if (/[069]/.test(e)){
+            v += 1;
+        }
+        if (e == '8'){
+            v += 2;
+        }
+    })
+    if (v > 0 && v%2 == 0){
+        return parseInt((v - 1).toString(2));
+    }
+    if (v > 0){
+        return parseInt((v + 1).toString(2));
+    }
+    if (v == 0) return 0;
+}
+
+
+-----------------------
