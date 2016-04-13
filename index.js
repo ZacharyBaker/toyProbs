@@ -376,3 +376,10 @@ def not_string(str):
   else:
     return 'not ' + str
 ------------------------------------------
+
+
+def missing_char(str, n):
+  first_half = str[:n]
+  second_half = str[n+1:]
+  return first_half + second_half
+----------------------------------------
