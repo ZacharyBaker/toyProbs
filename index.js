@@ -383,3 +383,13 @@ def missing_char(str, n):
   second_half = str[n+1:]
   return first_half + second_half
 ----------------------------------------
+
+def front_back(str):
+  if len(str) > 1:
+    new_first = str[len(str) - 1:]
+    new_last = str[:1]
+    middle = str[1:len(str) - 1]
+    return new_first + middle + new_last
+  else:
+    return str
+-------------------------------------
