@@ -407,3 +407,8 @@ def front3(str):
 def string_times(str, n):
   return str*n
 -----------------------------------------------
+
+
+def string_bits(str):
+  return str[::2]
+-----------------------------------------------
