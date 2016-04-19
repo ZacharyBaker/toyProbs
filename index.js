@@ -412,3 +412,25 @@ def string_times(str, n):
 def string_bits(str):
   return str[::2]
 -----------------------------------------------
+
+
+ return movieLists.concatMap(function(movieList){
+    return movieList.videos.concatMap(function(video){
+        return Array.zip(
+        video.boxarts.reduce(function(prev,curr){
+          return prev.width*prev.height > curr.width*curr.height ? curr : prev;
+        }),
+        video.interestingMoments.filter(function(moment){
+            return moment.type === "Middle"
+        }),
+        function(boxart,interestingMoment){
+          return {id: video.id, title: video.title, time: interestingMoment.time, url: boxart.url}
+        }
+      )
+    })
+  })
+}
+
+
+
+-----------------------------
