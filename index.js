@@ -487,3 +487,13 @@ def array123(nums):
       return True
   return False
 -----------------------------------------------
+
+
+def string_match(a, b):
+  count = 0
+  for i in range(len(b) - 1):
+    for x in range(len(a) - 1):
+      if b[i] + b[i + 1] == a[x] + a[x + 1]:
+        count += 1;
+  return count
+------------------------------------------
