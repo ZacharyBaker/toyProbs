@@ -505,3 +505,25 @@ def combo_string(a, b):
     return b + a + b
 
 ------------------------------------------------
+
+function Near_Square(n) {
+    if (Math.sqrt(n) % 1 == 0){
+        return [Math.sqrt(n), Math.sqrt(n)]
+    }
+    var a = 1;
+    var b = n;
+    var bOne = 0;
+    var aOne = 0;
+    
+    for (var i = n; i > 0; i--){
+        if (n / i % 1 == 0) {
+            bOne = i;
+            aOne = n/i;
+            if (bOne - aOne < b - a && bOne - aOne > 0){
+                a = aOne;
+                b = bOne;
+            }
+        }
+    }
+    return [a,b]
+}==========================================
