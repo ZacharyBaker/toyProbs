@@ -556,3 +556,12 @@ def common_end(a, b):
     return False
 
 ----------------------------------------------
+
+
+def sum3(nums):
+  total = 0
+  for i in nums:
+    total += i
+  return total
+
+----------------------------------------
