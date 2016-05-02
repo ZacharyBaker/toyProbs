@@ -565,3 +565,8 @@ def sum3(nums):
   return total
 
 ----------------------------------------
+
+def rotate_left3(nums):
+  return nums[1::] + nums[:1:]
+
+-------------------------------------
