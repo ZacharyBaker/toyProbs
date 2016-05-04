@@ -575,3 +575,18 @@ def rotate_left3(nums):
   return nums[1::] + nums[:1:]
 
 -------------------------------------
+
+function offsets(chain) {
+    chain = String(chain).split('')
+    var first = Number(chain[0])
+    if (chain.length < 2){
+        return first
+    }
+    for (var i = 1; i < chain.length-1; i++){
+        var next = Number(chain[i+1]) - Number(chain[i])
+        first += next;
+    }
+    return first
+}
+
+--------------------------------------
