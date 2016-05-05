@@ -590,3 +590,17 @@ function offsets(chain) {
 }
 
 --------------------------------------
+
+-------------------------
+makeSentence = w => {
+    a = '';
+    for (i = 0; i < w.length; i++){
+        o = '';
+        for (j = 0; j < w[i].length; j++){
+            o = o + w[i][j]
+        }
+        a.length === 0 ? a = a + o : a = a + " " + o;
+    }
+    a = a + ".";
+    return a;
+}
