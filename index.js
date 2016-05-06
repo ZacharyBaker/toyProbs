@@ -604,3 +604,20 @@ makeSentence = w => {
     a = a + ".";
     return a;
 }
+
+
+---------------------------------------------------
+
+function FibonacciSecret(message) {
+    message = message.replace(/\s/g, '');
+    var fib = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233];
+    var ans = [];
+    for (var i = 0; i < fib.length; i++){
+        if (message[fib[i]]) {
+            ans.push((message[fib[i]]).toUpperCase());
+            console.log(ans);
+        }
+    }
+    ans = ans.join('-');
+    return ans;
+}
