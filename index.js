@@ -621,3 +621,16 @@ function FibonacciSecret(message) {
     ans = ans.join('-');
     return ans;
 }
+
+
+
+---------------------------------------------------------
+isSentencePalindrome = s => {
+    s = s.replace(/(\s)|([^a-zA-Z])/g, '').toLowerCase();
+    len = s.length;
+    s = s.split('');
+
+    s.length % 2 != 0 ? (f = s.slice(0, Math.floor(len/2)).join(''),b = s.slice(Math.ceil(len/2)).reverse().join('')) : (f = s.slice(0, len/2).join(''), b = s.slice(len/2).reverse().join(''));
+    
+    return f == b;
+}
