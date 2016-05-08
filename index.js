@@ -634,3 +634,20 @@ isSentencePalindrome = s => {
     
     return f == b;
 }
+
+--------------------------------------------------------
+
+
+function IsPermutationOf(l, r) {
+    
+    r = r.split('').sort()
+    l = l.split('').sort()
+    
+    for (var i = 0; i < r.length; i++){
+        if (r[i] !== l[i]){
+            return false
+        }
+    }
+    
+    return true
+}
