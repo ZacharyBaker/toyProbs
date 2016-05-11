@@ -675,3 +675,23 @@ def rotate_left3(nums):
   return nums[1::] + nums[:1:]
 
 -------------------------------------
+
+function SumSquareRoot(lst) {
+    var ans = [];
+    if (lst.length){
+        for (var i = 0; i < lst.length; i++){
+            if (Math.sqrt(lst[i])%1 === 0){
+                var guy = Math.sqrt(lst[i]);
+                for (var j = 0; j < lst.length; j++){
+                    if (guy === lst[j]){
+                        ans.push(lst[j]);
+                        lst.splice(j,1);
+                        i--;
+                    }
+                }
+            }
+        }
+    }
+    return ans.reduce(function(a,b){return a + b}, 0)
+}
+--------------------------------
