@@ -695,3 +695,13 @@ function SumSquareRoot(lst) {
     return ans.reduce(function(a,b){return a + b}, 0)
 }
 --------------------------------
+
+alpha6=s=>{
+    ans=0
+    for(i=0;i<s.length;i+=5){
+        ans+=s.charCodeAt(i)
+    }
+    return ans
+}
+
+--------------------------------
