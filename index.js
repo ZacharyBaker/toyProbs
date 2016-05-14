@@ -716,3 +716,20 @@ function fac(num){
 }
 
  -----------------------
+ 
+function AlternatingDigitSum(n) {
+    var arr = String(fac(n)).split('').reverse()
+    var ans = arr[0];
+    for (var i = 0; i < arr.length-1; i++){
+        if (i === 0 || i%2 === 0){
+            ans = ans - arr[i+1]
+        } else {
+            ans = ans + arr[i+1]
+        }
+    }
+    return ans%11;
+}
+
+
+------------------------
+
