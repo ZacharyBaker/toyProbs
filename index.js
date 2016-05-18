@@ -716,7 +716,7 @@ function fac(num){
 }
 
  -----------------------
- 
+
 function AlternatingDigitSum(n) {
     var arr = String(fac(n)).split('').reverse()
     var ans = arr[0];
@@ -743,3 +743,8 @@ def sum2(nums):
     return nums[0] + nums[1]
 
 -------------------------------
+
+def make_ends(nums):
+  return [nums[0], nums[len(nums)-1]]
+
+----------------------------------------------------------
