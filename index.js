@@ -758,3 +758,15 @@ def has23(nums):
   return False
 
 ------------------------
+
+
+def cigar_party(cigars, is_weekend):
+  if cigars > 39:
+    if is_weekend == True:
+      return True
+    elif cigars < 61:
+      return True
+  return False
+
+---------------------------------
+
