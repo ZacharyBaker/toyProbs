@@ -770,3 +770,24 @@ def cigar_party(cigars, is_weekend):
 
 ---------------------------------
 
+
+var TestReact = React.createClass({
+    getInitialState: function(){
+    return {
+        username: 'this is zacharybinks'
+    }
+  },
+  render: function(){
+    return (
+        <div>
+        {this.state.username}
+      </div>
+    )
+  }
+});
+
+ReactDOM.render(
+    <TestReact />, 
+  document.getElementById('app')
+);
+-----------------------
