@@ -791,3 +791,14 @@ ReactDOM.render(
   document.getElementById('app')
 );
 -----------------------
+
+----------------------------------------------
+function fareEstimator(ride_time, ride_distance, cost_per_minute, cost_per_mile) {
+    var results = [];
+    for (var i = 0; i < cost_per_minute.length; i++){
+        results.push((ride_time * cost_per_minute[i]) + (cost_per_mile[i] * ride_distance))
+    }
+    
+    return results;
+}
+
