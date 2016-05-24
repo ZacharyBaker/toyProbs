@@ -802,3 +802,24 @@ function fareEstimator(ride_time, ride_distance, cost_per_minute, cost_per_mile)
     return results;
 }
 
+
+--------------------------------
+
+function perfectCity(departure, destination) {   
+    var i1 = parseInt(departure[0]);
+    var i2 = parseInt(destination[0]);    
+    if (i1 != departure[0] && i2 != destination[0] && i1 === i2){        
+        var d1 = departure[0] - i1;        
+        var d2 = destination[0] - i2;           
+        var x = Math.min(d1 + d2, (1 - d1) + (1 - d2));                
+        return Math.abs(departure[1] - destination[1]) + x;           
+    }     var i1 = parseInt(departure[1]);    var i2 = parseInt(destination[1]);     
+    if (i1 != departure[1] && i2 != destination[1] && i1 === i2){        var d1 = departure[1] - i1;        
+        var d2 = destination[1] - i2;           
+        var x = Math.min(d1 + d2, (1 - d1) + (1 - d2));               
+        return Math.abs(departure[0] - destination[0]) + x;             
+    return Math.abs(departure[0] - destination[0]) + Math.abs(departure[1] - destination[1])}
+}
+----------------------------------------------
+
+
