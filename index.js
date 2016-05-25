@@ -823,3 +823,28 @@ function perfectCity(departure, destination) {
 ----------------------------------------------
 
 
+
+---------------------------
+var ButtonFun = React.createClass({
+    getInitialState(){
+    return {
+        number: 9
+    }
+  },
+  handleClick(e){
+    console.log('handleClick fired', this.state.number);
+    this.setState({
+        number: this.state.number + 1
+    })
+  },
+  render(){
+    return (
+        <button onClick={this.handleClick}>{this.state.number}</button>
+    )
+  }
+});
+ReactDOM.render(
+<ButtonFun />,
+document.getElementById('app')
+);
+------------------------
