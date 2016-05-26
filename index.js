@@ -848,3 +848,56 @@ ReactDOM.render(
 document.getElementById('app')
 );
 ------------------------
+
+------------------------------
+var CompContainer = React.createClass({
+    getInitialState(){
+    return {
+        raw: 'this is the first part'
+    }
+  },
+  render(){
+    return (
+        <div>
+      {this.state.raw}
+      <HappyDog />
+      <HappyCat />
+      </div>
+    )
+  }
+});
+
+var HappyDog = React.createClass({
+    getInitialState(){
+    return {
+    dog: 'Bark! This is the second part'
+    }
+  },
+  render(){
+    return (
+        <div>
+        {this.state.dog}
+      </div>
+    )
+  }
+});
+
+var HappyCat = React.createClass({
+    getInitialState(){
+    return {
+        cat: 'Meow! This is the third part'
+    }
+  },
+  render(){
+    return (
+        <div>
+        {this.state.cat}
+      </div>
+    )
+  }
+})
+ReactDOM.render(
+<CompContainer />,
+document.getElementById('app')
+)
+-----------------------
