@@ -901,3 +901,61 @@ ReactDOM.render(
 document.getElementById('app')
 )
 -----------------------
+
+--------------------------------
+
+var CompContainer = React.createClass({
+    getInitialState(){
+    return {
+        raw: 'this is the first part'
+    }
+  },
+  changeState(stuff){
+    this.setState({
+        raw: stuff
+    })
+  },
+  render(){
+    return (
+        <div>
+         {this.state.raw}
+             <HappyDog changeShiz={this.changeState} />
+      </div>
+    )
+  }
+});
+
+var HappyDog = React.createClass({
+    getInitialState(){
+    return {
+        dog: 'Bark! This is the second part',
+        change: ''
+    }
+  },
+  updateStuff(e){
+    this.setState({
+        change: e.target.value
+    })
+  },
+  makeAPlay(){
+    this.props.changeShiz(this.state.change);
+    this.setState({
+        change: ''
+    });
+  },
+  render(){
+    return (
+        <div>
+        
+        <input type="text" value={this.state.change} onChange={this.updateStuff} />
+        <button onClick={this.makeAPlay}> Change Shizz Breh </button>
+      </div>
+    )
+  }
+});
+
+ReactDOM.render(
+<CompContainer />,
+document.getElementById('app')
+);
+
