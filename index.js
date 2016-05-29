@@ -958,4 +958,97 @@ ReactDOM.render(
 <CompContainer />,
 document.getElementById('app')
 );
+-----------------------------------------
+
+
+---------------------------------------
+var Grandpa = React.createClass({
+    getInitialState(){
+    return {
+        grandpa: "Pablo"
+    }
+  },
+  changeGrandpa(name){
+    this.setState({
+        grandpa: name
+    })
+  },
+  render(){
+    return (
+        <div>
+        Who is your Grandpa?    {this.state.grandpa}
+        <Daddy changeG={this.changeGrandpa} />
+      </div>
+    )
+  }
+});
+
+var Daddy = React.createClass({
+    getInitialState(){
+    return {
+        daddy: "Tomas",
+        grandpaToChange: ""
+    }
+  },
+  updateGrandpaToChange(e){
+    this.setState({
+        grandpaToChange: e.target.value
+    });
+  },
+  newGrandpa(){
+    this.props.changeG(this.state.grandpaToChange);
+    this.setState({
+        grandpaToChange: ''
+    });
+  },
+  changeDad(name){
+    this.setState({
+        daddy: name
+    })
+  },
+  render(){
+    return (
+        <div>
+      Who is your Daddy? {this.state.daddy} <br/>
+      <input type="text" value={this.state.value} onChange={this.updateGrandpaToChange} />
+      <button onClick={this.newGrandpa}> Change your Grandpa! </button>
+      <Child changeD={this.changeDad} />
+      </div>
+    )
+  }
+});
+
+var Child = React.createClass({
+    getInitialState(){
+    return {
+        child: 'Rocco',
+      dadToChange: ''
+    }
+  },
+  updateDadToChange(e){
+    this.setState({
+        dadToChange: e.target.value
+    })
+  },
+  changeDaddy(){
+    this.props.changeD(this.state.dadToChange)
+    this.setState({
+        dadToChange: ''
+    })
+  },
+  render(){
+    return (
+        <div>
+            My name is {this.state.child}!!! <br/> I'mma bout to change my daddy
+            <br/> <input type="text" value={this.state.dadToChange} onChange={this.updateDadToChange} />
+            <button onClick={this.changeDaddy} > Change yo daddy </button>
+        </div>
+    )
+  }
+});
+
+ReactDOM.render(<Grandpa />, document.getElementById('app'));
+
+
+-------------------------
 
