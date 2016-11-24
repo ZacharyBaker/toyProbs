@@ -676,6 +676,36 @@ def rotate_left3(nums):
 
 -------------------------------------
 
+
+
+function fillTemplate(template, placeholders) {
+    for (var i =0, n = placeholders.length; i<n; i++) {
+        var newTemp = template.replace("{{"+placeholders[i][0]+"}}",placeholders[i][1])
+        if(newTemp != template) {
+            template = newTemp;
+            i=-1;
+        }
+    }
+    return template;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function SumSquareRoot(lst) {
     var ans = [];
     if (lst.length){
