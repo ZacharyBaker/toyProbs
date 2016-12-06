@@ -1082,3 +1082,16 @@ ReactDOM.render(<Grandpa />, document.getElementById('app'));
 
 -------------------------
 
+function stringMaze(maze) {
+    var seen = [];
+    var i = 0;
+    var count = 0;
+    while (seen.indexOf(i) == -1) {
+        if (i == maze.length - 1) return count;
+        seen.push(i);
+        i = (i + maze.charCodeAt(i) - 'a'.charCodeAt(0) + 1) % maze.length;
+        ++count;
+    }
+    return -1;
+}
+
