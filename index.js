@@ -1095,3 +1095,41 @@ function stringMaze(maze) {
     return -1;
 }
 
+-------------------------------
+
+function Square_Check(p) {
+    var a = latice(0,1, p);
+    var b = latice(0,2, p);
+    var c = latice(0,3, p);
+    var m = latice(1,2, p);
+    var n = latice(1,3, p);
+    var z = latice(2,3, p);
+    var dia = Math.max(a,b,c);
+    if (Math.max(m,n,z) != dia) {
+        return 0;
+    }
+    if (m == dia) {
+        if (a == b && b == n && n == z){
+            return 1;
+        }
+        return 0;
+    }
+    if (n == dia) {
+        if (a == c && c == m && m == z){
+            return 1;
+        }
+        return 0;
+    }
+    if (z == dia) {
+        if (b == c && c == m && m == n){
+            return 1;
+        }
+        return 0;
+    }
+    return 0;
+}
+
+function latice(a, b, points) {
+    return (Math.abs(points[2 * a] - points[2 * b])) + (Math.abs(points[2 * a + 1] - points[2 * b + 1]))
+}
+
